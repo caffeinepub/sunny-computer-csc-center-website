@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+
+    /* Deep Navy Blue & Saffron Theme - Light Mode */
+    --background: 0.99 0 0;
+    --foreground: 0.145 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.145 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0 0;
+
+    /* Deep Navy Blue Primary */
+    --primary: 0.18 0.08 250;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.96 0 0;
+    --secondary-foreground: 0.18 0.08 250;
+    --muted: 0.96 0 0;
+    --muted-foreground: 0.5 0 0;
+    --accent: 0.96 0 0;
+    --accent-foreground: 0.18 0.08 250;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.18 0.08 250;
+
+    /* Custom Colors */
+    --navy-blue: 0.18 0.08 250;
+    --navy-blue-dark: 0.12 0.1 250;
+    --saffron: 0.7 0.18 45;
+    --saffron-dark: 0.6 0.2 40;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+  }
+
+  .dark {
+    --background: 0.145 0 0;
+    --foreground: 0.985 0 0;
+    --card: 0.205 0 0;
+    --card-foreground: 0.985 0 0;
+    --popover: 0.269 0 0;
+    --popover-foreground: 0.985 0 0;
+
+    /* Deep Navy Blue Primary - Dark Mode */
+    --primary: 0.35 0.12 250;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.269 0 0;
+    --secondary-foreground: 0.985 0 0;
+    --muted: 0.269 0 0;
+    --muted-foreground: 0.708 0 0;
+    --accent: 0.371 0 0;
+    --accent-foreground: 0.985 0 0;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.35 0.12 250;
+
+    /* Custom Colors - Dark Mode */
+    --navy-blue: 0.35 0.12 250;
+    --navy-blue-dark: 0.25 0.14 250;
+    --saffron: 0.75 0.2 45;
+    --saffron-dark: 0.65 0.22 40;
+
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .bg-hero-pattern {
+    background-image: radial-gradient(
+        circle at 20% 50%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 50%
+      );
+  }
+}
+
+@layer utilities {
+  .text-navy-blue {
+    color: oklch(var(--navy-blue));
+  }
+
+  .bg-navy-blue {
+    background-color: oklch(var(--navy-blue));
+  }
+
+  .bg-navy-blue-dark {
+    background-color: oklch(var(--navy-blue-dark));
+  }
+
+  .text-saffron {
+    color: oklch(var(--saffron));
+  }
+
+  .bg-saffron {
+    background-color: oklch(var(--saffron));
+  }
+
+  .bg-saffron-dark {
+    background-color: oklch(var(--saffron-dark));
+  }
+
+  .border-navy-blue {
+    border-color: oklch(var(--navy-blue));
+  }
+
+  .border-saffron {
+    border-color: oklch(var(--saffron));
+  }
+
+  .hover\:bg-navy-blue-dark:hover {
+    background-color: oklch(var(--navy-blue-dark));
+  }
+
+  .hover\:bg-saffron-dark:hover {
+    background-color: oklch(var(--saffron-dark));
+  }
+}
